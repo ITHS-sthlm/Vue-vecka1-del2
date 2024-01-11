@@ -16,18 +16,43 @@
         </section>
 
         <!-- Part 1 - Handlers, events, replaces vanilla js addeventListener -->
+        <div id="handler">
+            <h2>Events Exempel</h2>
+            <!-- Knapp Add, lyssnar på klick med hjälp av v-on -->
+            <button @click="add">Add</button>
+            <!-- Knapp reduce, lyssnar på klick med hjälp av v-on -->
+            <button @click="reduce">Reduce</button>
+            <!-- Inhämtar ett värde "counter" från Vue appen för att visa aktuella värdet -->
+            <p>Result: {{ counter }}</p>
+            <!-- v-once, ändras endast en gång, endast vid sidladdning -->
+            <p v-once>Resultatet visas bara en gång: {{ counter }}</p>
+            <!-- Sätta ett namn -->
+            <input type="text" @input="setName" />
+            <!-- Visar upp värdet från input, med hjälp av event  -->
+            <p>Ditt namn är: {{ name }}</p>
+        </div>
 
         <!-- Part 2 Computed properties, alltid igång, funktioner startas automatiskt, förändingar
         uppdateras automatiskt  -->
+        <div id="computed">
+            <h2>Computed vs not computed</h2>
+            <button @click="add">Add</button>
+            <!-- Knapp reduce, lyssnar på klick med hjälp av v-on -->
+            <button @click="reduce">Reduce</button>
+            <!-- Inhämtar ett värde "counter" från Vue appen för att visa aktuella värdet -->
+            <p>Result: {{ counter }}</p>
+            <input type="text" v-model="firstName" />
+            <p>Ditt fullständiga namn är: {{ giveFullName }}</p>
+        </div>
 
         <!-- Part 3 Watcher , övervakar, övervakar en särskild instans-->
-
-        <!-- Part 4 Component med fetch, vi gör 2 olika saker, dels skapar vi en komponent och sen
-        tar vi in denna nedan. (appWidget, kan heta vadsomhelst).
-        Den innehåller en fetch som både kan posta och ta emot data, efterssom jag gjort den i
-    komponentform så lade vi in ett html template i samma fil-->
+        <div id="watcher">
+            <h2>Watcher</h2>
+            <input type="text" v-model="firstName" />
+            <input type="text" v-model="lastName" />
+            <p>Ditt fullständiga namn är: {{ fullName }}</p>
+        </div>
 
         <script src="app.js"></script>
-        <script src="appWidget.js"></script>
     </body>
 </html>
